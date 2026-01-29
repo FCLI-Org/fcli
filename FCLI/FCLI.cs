@@ -9,12 +9,13 @@
 
     private static void Main()
     {
+        ReadLine.HistoryEnabled = true;
         HelpCommand.Handler(string.Empty);
 
         while (true)
         {
             Console.Write("> ");
-            var input = Console.ReadLine();
+            var input = ReadLine.Read();
             if (input == null) continue;
 
             var parts = input.Split(' ', 2, StringSplitOptions.RemoveEmptyEntries);
